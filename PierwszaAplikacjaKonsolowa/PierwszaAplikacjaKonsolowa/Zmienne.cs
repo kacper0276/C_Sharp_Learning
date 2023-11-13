@@ -35,5 +35,13 @@ namespace PierwszaAplikacjaKonsolowa
 
         Price price = new Price(1, 2);
         Price price21 = new(1, 5);
+
+        static string? yearString = Console.ReadLine();
+        bool isValid = int.TryParse(yearString, out int year);
+        // Console.WriteLine(isValid);
+        // Console.WriteLine(year);
+
+        static int firstNumber = 20;
+        int secondNumber = firstNumber;
     }
 }
