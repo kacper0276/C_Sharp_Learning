@@ -34,5 +34,6 @@ namespace PierwszaAplikacjaKonsolowa
         };
 
         Price price = new Price(1, 2);
+        Price price21 = new(1, 5);
     }
 }
