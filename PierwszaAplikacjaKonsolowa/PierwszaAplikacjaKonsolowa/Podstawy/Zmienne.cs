@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PierwszaAplikacjaKonsolowa
+namespace PierwszaAplikacjaKonsolowa.Podstawy
 {
     internal class Zmienne
     {
@@ -28,8 +28,8 @@ namespace PierwszaAplikacjaKonsolowa
 
             public Price(int valueDevcimal, int valuePointer)
             {
-                this.ValueDecimal = valueDevcimal;
-                this.ValuePointer = valuePointer;
+                ValueDecimal = valueDevcimal;
+                ValuePointer = valuePointer;
             }
         };
 
