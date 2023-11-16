@@ -10,7 +10,7 @@ namespace ProgramowanieObiektowe.TworzenieObiektow
     {
         public decimal Amount { get; }
 
-        public Price(decimal amount)
+        private Price(decimal amount)
         {
             Amount = amount;
         }
@@ -46,6 +46,47 @@ namespace ProgramowanieObiektowe.TworzenieObiektow
             if(ReferenceEquals(other, this)) return true;
 
             return this.Amount == other.Amount;
+        }
+
+        public override int GetHashCode()
+        {
+            return Amount.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return string.Format("{0:0.00}", Amount);
+        }
+
+        // Nadpisanie operatorów
+        public static Price operator +(Price left, Price right)
+        {
+            return Create(left.Amount + right.Amount);
+        }
+
+        public static Price operator -(Price left, Price right)
+        {
+            return Create(left.Amount - right.Amount);
+        }
+
+        public static Price operator *(Price left, Price right)
+        {
+            return Create(left.Amount * right.Amount);
+        }
+
+        public static Price operator /(Price left, Price right)
+        {
+            return Create(left.Amount / right.Amount);
+        }
+
+        public static bool operator ==(Price left, Price right)
+        {
+            return left.Amount == right.Amount;
+        }
+
+        public static bool operator !=(Price left, Price right)
+        {
+            return left.Amount != right.Amount;
         }
     }
 }
