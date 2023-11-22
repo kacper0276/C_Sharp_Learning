@@ -10,7 +10,13 @@ namespace ProgramowanieObiektowe.Extensions
     {
         public ExtensionsUzycie()
         {
-            
+            string text = "TestText";
+            text = text.AddExtraLine();
+            Console.WriteLine(text);
+
+            string textExtra = "TestText";
+            textExtra = textExtra.AddExtraLineWithText("NAPIS AUU");
+            Console.WriteLine(textExtra);
         }
     }
 }
