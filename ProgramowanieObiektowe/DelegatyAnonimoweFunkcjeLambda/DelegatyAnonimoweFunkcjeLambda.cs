@@ -52,7 +52,7 @@ namespace ProgramowanieObiektowe.DelegatyAnonimoweFunkcjeLambda
             // Action - nic nie zwraca
             Action<int> action = delegate (int result) { Console.WriteLine(result); };
             action(Add(3, 4));
-            Action<int> action1 = (int result) => Console.WriteLine(result);
+            Action<int> action1 = (result) => Console.WriteLine(result);
             action1(Add(4, 5));
 
             Console.ReadKey();
