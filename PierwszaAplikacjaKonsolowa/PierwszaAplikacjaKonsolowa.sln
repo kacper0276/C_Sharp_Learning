@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PierwszaAplikacjaKonsolowa"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramowanieObiektowe", "..\ProgramowanieObiektowe\ProgramowanieObiektowe.csproj", "{C4F8D8EF-531B-4856-BC05-D2DA37AA383E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp", "ToDoApp\ToDoApp.csproj", "{8EBFFA41-5EC7-4146-A993-49E030C4F8DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp", "..\TodoApp\ToDoApp.csproj", "{7CDC5A5C-1365-4C97-840B-6A7810054D4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{C4F8D8EF-531B-4856-BC05-D2DA37AA383E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4F8D8EF-531B-4856-BC05-D2DA37AA383E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4F8D8EF-531B-4856-BC05-D2DA37AA383E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8EBFFA41-5EC7-4146-A993-49E030C4F8DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EBFFA41-5EC7-4146-A993-49E030C4F8DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EBFFA41-5EC7-4146-A993-49E030C4F8DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EBFFA41-5EC7-4146-A993-49E030C4F8DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CDC5A5C-1365-4C97-840B-6A7810054D4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CDC5A5C-1365-4C97-840B-6A7810054D4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CDC5A5C-1365-4C97-840B-6A7810054D4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CDC5A5C-1365-4C97-840B-6A7810054D4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
