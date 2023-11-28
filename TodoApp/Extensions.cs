@@ -1,8 +1,12 @@
-﻿using TodoApp.Core.DTO;
+﻿using System.Reflection;
+using System.Runtime.CompilerServices;
+using TodoApp.Core.DTO;
 using TodoApp.Core.Entities;
 using TodoApp.Core.Repositories;
 using TodoApp.Core.Services;
 
+[assembly: InternalsVisibleTo("TodoApp.UmitTests")]
+[assembly: InternalsVisibleTo("DynamicProxyGenAssembly2")]
 namespace TodoApp.Core
 {
     public static class Extensions

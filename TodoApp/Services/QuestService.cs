@@ -6,7 +6,7 @@ using TodoApp.Core.Repositories;
 
 namespace TodoApp.Core.Services
 {
-    internal sealed class QuestService : IQuestService
+    public class QuestService : IQuestService
     {
         private readonly IRepository<Quest> _repository;
 

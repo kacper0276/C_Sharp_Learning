@@ -2,7 +2,7 @@
 
 namespace TodoApp.Core.Repositories
 {
-    internal sealed class Repository<T> : IRepository<T>
+    public sealed class Repository<T> : IRepository<T>
         where T : BaseEntity
     {
         private readonly Dictionary<string, List<T>> _entities = new();
