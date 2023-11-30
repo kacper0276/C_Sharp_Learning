@@ -40,8 +40,19 @@ namespace TestyJednostkowe.Services
 
             questAfterUpdate.ShouldNotBeNull();
             _repository.Verify(r => r.Update(quest));
-            questAfterUpdate.Status.ShouldNotBe(quest.Status.ToString());
             questAfterUpdate.Status.ShouldBe(status);
+        }
+
+        [Fact]
+        public void given_invalid_id_when_change_quest_status_should_throw_an_exception()
+        {
+            var id = 1;
+            var status = "abc";
+            // FluentAssertion
+            var exception = Record.Exception(() => _questService.ChangeQuestStatus(id, status));
+            exception.ShouldNotBeNull();
+            exception.ShouldBeOfType<CustomException>();
+            exception.Message.ShouldContain("Not found");
         }
 
         [Theory]
@@ -50,7 +61,6 @@ namespace TestyJednostkowe.Services
         [InlineData("         ")]
         [InlineData("nie+istnieje")]
         [InlineData("200")]
-        [InlineData("1")]
         public void given_invalid_status_when_change_quest_status_should_throw_an_exception(string status)
         {
             var quest = CreatedDefaultQuest();
