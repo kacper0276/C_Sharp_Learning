@@ -3,6 +3,8 @@ using TodoApp.Core.Services;
 using TodoApp.Core.Repositories;
 using TodoApp.Core.Entities;
 using TodoApp.Core.DTO;
+using Shouldly;
+using TodoApp.Core.Exceptions;
 
 namespace TestyJednostkowe.Services
 {
@@ -14,7 +16,7 @@ namespace TestyJednostkowe.Services
         public QuestServiceTests()
         {
             _repository = new Mock<IRepository<Quest>>();
-            _questService = new QuestService(_repository.Object);   
+            _questService = new QuestService(_repository.Object);
         }
 
         [Fact]
@@ -25,6 +27,50 @@ namespace TestyJednostkowe.Services
             _questService.AddQuest(dto);
 
             _repository.Verify(r => r.Add(It.IsAny<Quest>()), times: Times.Once);
+        }
+
+        [Fact]
+        public void should_quest_status()
+        {
+            var quest = CreatedDefaultQuest();
+            _repository.Setup(r => r.Get(quest.Id)).Returns(quest);
+            var status = QuestStatus.Complete.ToString();
+
+            var questAfterUpdate = _questService.ChangeQuestStatus(quest.Id, status);
+
+            questAfterUpdate.ShouldNotBeNull();
+            _repository.Verify(r => r.Update(quest));
+            questAfterUpdate.Status.ShouldNotBe(quest.Status.ToString());
+            questAfterUpdate.Status.ShouldBe(status);
+        }
+
+        [Theory]
+        [InlineData(null)]
+        [InlineData("")]
+        [InlineData("         ")]
+        [InlineData("nie+istnieje")]
+        [InlineData("200")]
+        [InlineData("1")]
+        public void given_invalid_status_when_change_quest_status_should_throw_an_exception(string status)
+        {
+            var quest = CreatedDefaultQuest();
+            _repository.Setup(r => r.Get(quest.Id)).Returns(quest);
+
+            var expectedException = new CustomException($"There is no Quest status {status}");
+            // FluentAssertion
+            var exception = Record.Exception(() => _questService.ChangeQuestStatus(quest.Id, status));
+            exception.ShouldNotBeNull();
+            exception.ShouldBeOfType(expectedException.GetType());
+            exception.Message.ShouldBe(expectedException.Message);
+        }
+
+        public static Quest CreatedDefaultQuest(int id = 1, string? title = null, string? description = null, QuestStatus questStatus = QuestStatus.New)
+        {
+            return new Quest(id, 
+                title ?? $"Title#{Guid.NewGuid().ToString("N")}", 
+                description ?? "", 
+                QuestStatus.New, 
+                DateTime.UtcNow);
         }
 
         [Fact]
