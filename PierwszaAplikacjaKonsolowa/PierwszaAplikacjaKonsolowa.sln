@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramowanieObiektowe", ".
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoApp", "..\TodoApp\ToDoApp.csproj", "{7CDC5A5C-1365-4C97-840B-6A7810054D4B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestyJednostkowe", "..\TestyJednostkowe\TestyJednostkowe.csproj", "{5DB9F4D2-9CF5-4B6D-BC80-FE02D8E71ABC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestyJednostkowe", "..\TestyJednostkowe\TestyJednostkowe.csproj", "{5DB9F4D2-9CF5-4B6D-BC80-FE02D8E71ABC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProgramowanieObiektoweCzęśćII", "..\ProgramowanieObiektoweCzęśćII\ProgramowanieObiektoweCzęśćII.csproj", "{9FB0E47D-8DFA-4CD0-BADF-F56BA6FA404D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{5DB9F4D2-9CF5-4B6D-BC80-FE02D8E71ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DB9F4D2-9CF5-4B6D-BC80-FE02D8E71ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DB9F4D2-9CF5-4B6D-BC80-FE02D8E71ABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB0E47D-8DFA-4CD0-BADF-F56BA6FA404D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB0E47D-8DFA-4CD0-BADF-F56BA6FA404D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB0E47D-8DFA-4CD0-BADF-F56BA6FA404D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB0E47D-8DFA-4CD0-BADF-F56BA6FA404D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
