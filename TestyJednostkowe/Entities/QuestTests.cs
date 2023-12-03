@@ -51,5 +51,8 @@ namespace TestyJednostkowe.Entities
             exception.Message.ShouldContain("Title");
             
         }
+
+        // change title
+        // change status
     }
 }

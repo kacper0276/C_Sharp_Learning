@@ -74,14 +74,7 @@ namespace TestyJednostkowe.Services
             exception.Message.ShouldBe(expectedException.Message);
         }
 
-        public static Quest CreatedDefaultQuest(int id = 1, string? title = null, string? description = null, QuestStatus questStatus = QuestStatus.New)
-        {
-            return new Quest(id, 
-                title ?? $"Title#{Guid.NewGuid().ToString("N")}", 
-                description ?? "", 
-                QuestStatus.New, 
-                DateTime.UtcNow);
-        }
+        
 
         [Fact]
         public void Test()
