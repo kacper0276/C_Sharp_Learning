@@ -7,7 +7,7 @@ using TodoApp.Core.Entities;
 
 namespace TestyJednostkowe.Common
 {
-    internal class Fixture
+    internal static class Fixture
     {
 
         public static Quest CreatedDefaultQuest(int id = 1, string? title = null, string? description = null, QuestStatus questStatus = QuestStatus.New)
