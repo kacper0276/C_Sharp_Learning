@@ -59,6 +59,16 @@
             Console.WriteLine($"Read file from {filePath} ...");
         }
 
+        /*
+         * public async Task<int> ReadFileAsync(string filePath)
+        {
+            Console.WriteLine($"Reading file from {filePath} ...");
+            await Task.Delay(3000);
+            Console.WriteLine($"Read file from {filePath} ...");
+            return 10;
+        }
+         */
+
         public async void ReadFileVoidAsync(string filePath)
         {
             Console.WriteLine($"Reading file from {filePath} ...");
