@@ -30,7 +30,7 @@ namespace ProgramowanieObiektoweCzęśćII.KontenerIoC
             IItemService itemService2;
             IItemService itemService3;
             IItemService itemService4;
-            using (var scope = serviceProvider.CreateScope())
+            using (var scope = serviceProvider.CreateScope()) // W obrębie 1 scope - jedna wartość
             {
                 itemService1 = scope.ServiceProvider.GetRequiredService<IItemService>();
                 itemService2 = scope.ServiceProvider.GetRequiredService<IItemService>();
@@ -61,7 +61,7 @@ namespace ProgramowanieObiektoweCzęśćII.KontenerIoC
             IItemService itemService3;
             IItemService itemService4;
 
-            using (var scope = serviceProvider.CreateScope())
+            using (var scope = serviceProvider.CreateScope()) // Singleton - mimo że różne Scope, to będzie ten sam obiekt
             {
                 itemService1 = scope.ServiceProvider.GetRequiredService<IItemService>();
                 itemService2 = scope.ServiceProvider.GetRequiredService<IItemService>();
