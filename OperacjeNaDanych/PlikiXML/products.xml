@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Products xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Product Id="1">
+    <Name>Product#1</Name>
+    <Cost>100</Cost>
+  </Product>
+  <Product Id="2">
+    <Name>Product#2</Name>
+    <Cost>200</Cost>
+  </Product>
+  <Product Id="3">
+    <Name>Product#3</Name>
+    <Cost>300</Cost>
+  </Product>
+  <Product Id="4">
+    <Name>Product#4</Name>
+    <Cost>400</Cost>
+  </Product>
+  <Product Id="5">
+    <Name>Product#5</Name>
+    <Cost>500</Cost>
+  </Product>
+</Products>

@@ -1,0 +1,8 @@
+﻿namespace OperacjeNaDanych.PlikiXML
+{
+    public class Priority
+    {
+        public int Id { get; set; }
+        public string Name { get; set; } = nameof(Priority);
+    }
+}
