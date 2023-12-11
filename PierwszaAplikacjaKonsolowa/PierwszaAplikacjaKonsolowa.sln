@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestyJednostkowe", "..\Test
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProgramowanieObiektoweCzęśćII", "..\ProgramowanieObiektoweCzęśćII\ProgramowanieObiektoweCzęśćII.csproj", "{9FB0E47D-8DFA-4CD0-BADF-F56BA6FA404D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperacjeNaDanych", "..\OperacjeNaDanych\OperacjeNaDanych.csproj", "{5BE8DC72-8463-4415-8336-D75876D44DAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OperacjeNaDanych", "..\OperacjeNaDanych\OperacjeNaDanych.csproj", "{5BE8DC72-8463-4415-8336-D75876D44DAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BazaDanych", "..\BazaDanych\BazaDanych.csproj", "{A0823221-8F8C-49B5-950E-7AA2B9EF385E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{5BE8DC72-8463-4415-8336-D75876D44DAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BE8DC72-8463-4415-8336-D75876D44DAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BE8DC72-8463-4415-8336-D75876D44DAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0823221-8F8C-49B5-950E-7AA2B9EF385E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0823221-8F8C-49B5-950E-7AA2B9EF385E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0823221-8F8C-49B5-950E-7AA2B9EF385E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0823221-8F8C-49B5-950E-7AA2B9EF385E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
