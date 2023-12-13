@@ -1,4 +1,4 @@
-﻿namespace TodoApp.Infrastructure
+﻿namespace TodoApp.Infrastructure.Database
 {
     public class DatabaseOptions
     {
