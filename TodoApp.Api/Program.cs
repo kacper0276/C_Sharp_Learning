@@ -20,4 +20,9 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+// Minimal API
+app.MapGet("/api/hc", async (_) => await Task.FromResult("TodoApp!"));
+app.MapGet("/api/mini", () => Results.Ok("MinimalApi"));
+app.MapPost("/api/hc", (int id) => Results.Ok($"Created{id}"));
+
 app.Run();
