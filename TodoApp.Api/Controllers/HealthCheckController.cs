@@ -7,6 +7,19 @@ namespace TodoApp.Api.Controllers
     [ApiController]
     public class HealthCheckController : ControllerBase
     {
+        private readonly IConfiguration _configuration;
+
+        public HealthCheckController(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
+        [HttpGet("appsetings")]
+        public ActionResult<string?> GetAppsettings()
+        {
+            return Ok(_configuration.GetRequiredSection("app").Value);
+        }
+
         [HttpGet]
         public async Task<ActionResult<string>> Get()
         {
