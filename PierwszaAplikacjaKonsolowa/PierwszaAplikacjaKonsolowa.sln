@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.UnitTests", "..\Tod
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoAppConsole", "..\TodoAppConsole\TodoAppConsole.csproj", "{02808D4C-486A-4831-A856-743DCB96BE5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.IntegrationTests", "..\TodoApp.IntegrationTests\TodoApp.IntegrationTests.csproj", "{B21744FC-23FB-4AAD-90FD-CAC087C3D506}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.IntegrationTests", "..\TodoApp.IntegrationTests\TodoApp.IntegrationTests.csproj", "{B21744FC-23FB-4AAD-90FD-CAC087C3D506}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.Migrations", "..\TodoApp.Migrations\TodoApp.Migrations.csproj", "{8698A7AA-C8CB-4D81-ADDB-2D96F98437E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Migrations", "..\TodoApp.Migrations\TodoApp.Migrations.csproj", "{8698A7AA-C8CB-4D81-ADDB-2D96F98437E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.Api", "..\TodoApp.Api\TodoApp.Api.csproj", "{159B0920-DBB5-4E5A-9104-11C9E88B0CE7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{8698A7AA-C8CB-4D81-ADDB-2D96F98437E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8698A7AA-C8CB-4D81-ADDB-2D96F98437E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8698A7AA-C8CB-4D81-ADDB-2D96F98437E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{159B0920-DBB5-4E5A-9104-11C9E88B0CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{159B0920-DBB5-4E5A-9104-11C9E88B0CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{159B0920-DBB5-4E5A-9104-11C9E88B0CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{159B0920-DBB5-4E5A-9104-11C9E88B0CE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
