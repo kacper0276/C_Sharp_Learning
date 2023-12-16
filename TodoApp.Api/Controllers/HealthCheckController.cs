@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace TodoApp.Api.Controllers
 {
@@ -8,16 +9,20 @@ namespace TodoApp.Api.Controllers
     public class HealthCheckController : ControllerBase
     {
         private readonly IConfiguration _configuration;
+        private readonly AppOptions _appOptions;
 
-        public HealthCheckController(IConfiguration configuration)
+        // IOptionsMonitor<> - do przewchwycenia czy ktoś zmienił wartość
+        // IOptions - po prostu (wtedy Value a nie CurrentValue)
+        public HealthCheckController(IConfiguration configuration, IOptionsMonitor<AppOptions> options)
         {
             _configuration = configuration;
+            _appOptions = options.CurrentValue;
         }
 
         [HttpGet("appsetings")]
         public ActionResult<string?> GetAppsettings()
         {
-            return Ok(_configuration.GetRequiredSection("app").Value);
+            return Ok(_configuration.GetRequiredSection("app").Value + " - " + _appOptions.Name);
         }
 
         [HttpGet]
