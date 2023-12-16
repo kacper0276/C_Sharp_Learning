@@ -3,6 +3,7 @@ using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.ComponentModel.DataAnnotations;
+using System.Net;
 using TodoApp.Api;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<AppOptions>(builder.Configuration.GetSection("app"));
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddValidatorsFromAssembly(typeof(Program).Assembly);
+
+// Middleware
+builder.Services.AddSingleton<ErrorHandlerMiddleware>();
 
 builder.Services.AddHostedService<HostedServiceTest>();
 
@@ -35,7 +39,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthorization();
-
+app.UseMiddleware<ErrorHandlerMiddleware>();
 app.MapControllers();
 
 // Minimal API
@@ -44,6 +48,36 @@ app.MapGet("/api/mini", (IOptionsMonitor<AppOptions> options) => options.Current
 app.MapPost("/api/hc", (int id) => Results.Ok($"Created{id}"));
 
 app.Run();
+
+public class ErrorHandlerMiddleware : IMiddleware
+{
+    private readonly ILogger<ErrorHandlerMiddleware> _logger;
+
+    public ErrorHandlerMiddleware(ILogger<ErrorHandlerMiddleware> logger)
+    {
+        _logger = logger;
+    }
+
+    public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+    {
+        
+        try
+        {
+            await next(context);
+        }
+        catch(Exception ex)
+        {
+            await HandleException(ex, context);
+        }
+    }
+
+    private async Task HandleException(Exception ex, HttpContext httpContext)
+    {
+        _logger.LogError(ex, ex.Message);
+        httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+        await httpContext.Response.WriteAsJsonAsync("There was an error");
+    }
+}
 
 class HostedServiceTest : IHostedService
 {
@@ -72,6 +106,12 @@ public class StudentsController : ControllerBase
     public ActionResult PostFluent(StudentFluentValidation student)
     {
         return Ok(student);
+    }
+
+    [HttpGet]
+    public ActionResult Get() 
+    {
+        throw new NotImplementedException();
     }
 
 }
