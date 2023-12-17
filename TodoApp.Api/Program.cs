@@ -49,6 +49,8 @@ app.MapPost("/api/hc", (int id) => Results.Ok($"Created{id}"));
 
 app.Run();
 
+public partial class Program { } // Dziêki temu mimo Internal klasa jest dostêpna w innym projekcie
+
 public class ErrorHandlerMiddleware : IMiddleware
 {
     private readonly ILogger<ErrorHandlerMiddleware> _logger;

@@ -1,19 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using TodoApp.Core.Entities;
-using TodoApp.Core.Repositories;
+﻿using TodoApp.Domain.Entities;
+using TodoApp.Domain.Repositories;
+using TodoApp.IntegrationTests.Common;
 
-namespace TodoApp.IntegrationTests
+namespace TodoApp.IntegrationTests.Repositories
 {
-    public class QuestRepositoryTests : IClassFixture<QuestFixture>
+    public class QuestRepositoryTests : BaseTest
     {
-        private readonly IRepository<Quest> _repository;
-
-        public QuestRepositoryTests(QuestFixture questFixture)
-        {
-            using var scope = questFixture.ServiceProvider.CreateScope();
-            _repository = scope.ServiceProvider.GetRequiredService<IRepository<Quest>>();
-        }
-
         [Fact]
         public async Task should_add_quest_to_database()
         {
@@ -32,18 +24,17 @@ namespace TodoApp.IntegrationTests
         {
             var quest = Quest.Create("Quest#2", "Description123");
             var id = await _repository.Add(quest);
-            var questAdded = new Quest(id, quest.Title, quest.Description, quest.Status, quest.Created, quest.Modified);
-            questAdded.ChangeStatus("Complete");
-            questAdded.ChangeTitle("Title#123");
-            questAdded.ChangeDescription(null);
+            quest.ChangeStatus("Complete");
+            quest.ChangeTitle("Title#123");
+            quest.ChangeDescription(null);
 
-            await _repository.Update(questAdded);
+            await _repository.Update(quest);
 
             var questUpdated = await _repository.Get(id);
             Assert.NotNull(questUpdated);
-            Assert.True(questAdded.Status == questUpdated.Status);
-            Assert.True(questAdded.Title == questUpdated.Title);
-            Assert.True(questAdded.Description == questUpdated.Description);
+            Assert.True(quest.Status == questUpdated.Status);
+            Assert.True(quest.Title == questUpdated.Title);
+            Assert.True(quest.Description == questUpdated.Description);
         }
 
         [Fact]
@@ -52,7 +43,7 @@ namespace TodoApp.IntegrationTests
             var quest = Quest.Create("Quest#3", "Description123");
             var id = await _repository.Add(quest);
 
-            await _repository.Delete(new Quest(id, quest.Title, quest.Description, quest.Status, quest.Created, quest.Modified));
+            await _repository.Delete(quest);
 
             var questDeleted = await _repository.Get(id);
             Assert.Null(questDeleted);
@@ -69,6 +60,13 @@ namespace TodoApp.IntegrationTests
             Assert.NotNull(quests);
             Assert.NotEmpty(quests);
             Assert.True(quests.Count > 1);
+        }
+
+        private readonly IRepository<Quest> _repository;
+
+        public QuestRepositoryTests(TestApplicationFactory testApplicationFactory) : base(testApplicationFactory)
+        {
+            _repository = GetRequiredService<IRepository<Quest>>();
         }
     }
 }
