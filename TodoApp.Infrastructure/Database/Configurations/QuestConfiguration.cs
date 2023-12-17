@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using TodoApp.Core.Entities;
+using TodoApp.Domain.Entities;
 
 namespace TodoApp.Infrastructure.Database.Configurations
 {
@@ -12,7 +12,7 @@ namespace TodoApp.Infrastructure.Database.Configurations
             builder.Property(q => q.Id)
                 .UseMySqlIdentityColumn();
 
-            builder.Property(q => q.Title)
+            builder.Property(q=>q.Title)
                 .HasMaxLength(150);
 
             builder.Property(q => q.Description)

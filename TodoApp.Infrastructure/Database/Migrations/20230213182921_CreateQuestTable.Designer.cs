@@ -24,41 +24,41 @@ namespace TodoApp.Infrastructure.Database.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("TodoApp.Core.Entities.Quest", b =>
-            {
-                b.Property<int>("Id")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnType("int")
-                    .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn);
 
-                b.Property<DateTime>("Created")
-                    .HasColumnType("datetime(6)");
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime(6)");
 
-                b.Property<string>("Description")
-                    .IsRequired()
-                    .HasMaxLength(3000)
-                    .HasColumnType("varchar(3000)");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(3000)
+                        .HasColumnType("varchar(3000)");
 
-                b.Property<DateTime?>("Modified")
-                    .HasColumnType("datetime(6)");
+                    b.Property<DateTime?>("Modified")
+                        .HasColumnType("datetime(6)");
 
-                b.Property<string>("Status")
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .HasColumnType("varchar(50)");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
-                b.Property<string>("Title")
-                    .IsRequired()
-                    .HasMaxLength(150)
-                    .HasColumnType("varchar(150)");
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("varchar(150)");
 
-                b.HasKey("Id");
+                    b.HasKey("Id");
 
-                b.HasIndex("Status");
+                    b.HasIndex("Status");
 
-                b.HasIndex("Title", "Status");
+                    b.HasIndex("Title", "Status");
 
-                b.ToTable("Quests");
-            });
+                    b.ToTable("Quests");
+                });
 #pragma warning restore 612, 618
         }
     }

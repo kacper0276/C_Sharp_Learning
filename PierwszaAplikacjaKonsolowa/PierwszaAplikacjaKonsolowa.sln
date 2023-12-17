@@ -17,8 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BazaDanych", "..\BazaDanych
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Core", "..\TodoApp.Core\TodoApp.Core.csproj", "{20990CDD-B4C9-438D-AF58-0C80A44117F6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Infrastructure", "..\TodoApp.Infrastructure\TodoApp.Infrastructure.csproj", "{B37092EC-3E36-49F3-AC66-A5F17B0127D6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.UnitTests", "..\TodoApp.UnitTests\TodoApp.UnitTests.csproj", "{758D0EC4-9F1D-499C-A433-2357CB879514}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoAppConsole", "..\TodoAppConsole\TodoAppConsole.csproj", "{02808D4C-486A-4831-A856-743DCB96BE5D}"
@@ -27,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.IntegrationTests", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Migrations", "..\TodoApp.Migrations\TodoApp.Migrations.csproj", "{8698A7AA-C8CB-4D81-ADDB-2D96F98437E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.Api", "..\TodoApp.Api\TodoApp.Api.csproj", "{159B0920-DBB5-4E5A-9104-11C9E88B0CE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Api", "..\TodoApp.Api\TodoApp.Api.csproj", "{159B0920-DBB5-4E5A-9104-11C9E88B0CE7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Infrastructure", "..\TodoApp.Infrastructure\TodoApp.Infrastructure.csproj", "{6EEF99CD-7D1F-4EDA-A133-8EEA2DE4905C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,10 +63,6 @@ Global
 		{20990CDD-B4C9-438D-AF58-0C80A44117F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20990CDD-B4C9-438D-AF58-0C80A44117F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20990CDD-B4C9-438D-AF58-0C80A44117F6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B37092EC-3E36-49F3-AC66-A5F17B0127D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B37092EC-3E36-49F3-AC66-A5F17B0127D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B37092EC-3E36-49F3-AC66-A5F17B0127D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B37092EC-3E36-49F3-AC66-A5F17B0127D6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{758D0EC4-9F1D-499C-A433-2357CB879514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{758D0EC4-9F1D-499C-A433-2357CB879514}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{758D0EC4-9F1D-499C-A433-2357CB879514}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -87,6 +83,10 @@ Global
 		{159B0920-DBB5-4E5A-9104-11C9E88B0CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{159B0920-DBB5-4E5A-9104-11C9E88B0CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{159B0920-DBB5-4E5A-9104-11C9E88B0CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EEF99CD-7D1F-4EDA-A133-8EEA2DE4905C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EEF99CD-7D1F-4EDA-A133-8EEA2DE4905C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EEF99CD-7D1F-4EDA-A133-8EEA2DE4905C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EEF99CD-7D1F-4EDA-A133-8EEA2DE4905C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
