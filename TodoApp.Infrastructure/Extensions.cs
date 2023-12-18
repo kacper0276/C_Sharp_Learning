@@ -15,7 +15,7 @@ namespace TodoApp.Infrastructure
         {
             services.Configure<AppOptions>(configuration.GetSection("app"));
             services.AddDatabase(configuration);
-            services.AddErrorHandling(); 
+            services.AddErrorHandling();
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
