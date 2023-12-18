@@ -39,7 +39,7 @@ namespace TodoApp.Domain.Entities
 
         public void ChangeTitle(string title)
         {
-            if (string.IsNullOrWhiteSpace(title)) 
+            if (string.IsNullOrWhiteSpace(title))
             {
                 throw new CustomException("Title cannot be empty");
             }

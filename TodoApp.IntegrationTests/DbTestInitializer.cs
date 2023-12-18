@@ -13,18 +13,19 @@ namespace TodoApp.IntegrationTests
             _serviceProvider = serviceProvider;
         }
 
-        public void Start()
+        public Task Start()
         {
             using var scope = _serviceProvider.CreateScope();
             var databaseOptions = scope.ServiceProvider.GetRequiredService<DatabaseOptions>();
 
             if (!databaseOptions.AllowMigrations)
             {
-                return;
+                return Task.CompletedTask;
             }
 
             var migrationRunner = scope.ServiceProvider.GetRequiredService<IMigrationRunner>();
             migrationRunner.MigrateUp();
+            return Task.CompletedTask;
         }
     }
 }

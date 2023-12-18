@@ -1,8 +1,8 @@
 ﻿using TodoApp.Core.DTO;
-using TodoApp.Core.Entities;
-using TodoApp.Core.Exceptions;
+using TodoApp.Domain.Entities;
+using TodoApp.Domain.Exceptions;
 using TodoApp.Core.Mappings;
-using TodoApp.Core.Repositories;
+using TodoApp.Domain.Repositories;
 
 namespace TodoApp.Core.Services
 {
@@ -18,8 +18,10 @@ namespace TodoApp.Core.Services
         public async Task<QuestDto> AddQuest(QuestDto dto)
         {
             var quest = Quest.Create(dto.Title, dto.Description);
-            await _repository.Add(quest);
-            return quest.AsDto();
+            var id = await _repository.Add(quest);
+            var questAdded = quest.AsDto();
+            questAdded.Id = id;
+            return questAdded;
         }
 
         public async Task<QuestDto> UpdateQuest(QuestDto dto)
@@ -28,7 +30,7 @@ namespace TodoApp.Core.Services
 
             if (quest is null)
             {
-                throw new CustomException($"Quest with id {dto.Id} was not found");
+                throw new CustomException($"Quest with id: '{dto.Id}' was not found");
             }
 
             quest.ChangeTitle(dto.Title);
@@ -44,7 +46,7 @@ namespace TodoApp.Core.Services
 
             if (quest is null)
             {
-                throw new CustomException($"Quest with id {id} was not found");
+                throw new CustomException($"Quest with id: '{id}' was not found");
             }
 
             await _repository.Delete(quest);
