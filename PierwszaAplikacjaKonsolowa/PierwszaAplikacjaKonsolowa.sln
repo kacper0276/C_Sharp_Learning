@@ -33,6 +33,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Domain", "..\TodoAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.UI", "..\TodoApp.UI\TodoApp.UI.csproj", "{3A3184FC-5AE1-4221-8618-2991553AB3D7}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApp.Shared", "..\TodoApp.Shared\TodoApp.Shared.csproj", "{3D27EC20-7C5F-4371-9E33-8D1FCD29D014}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{3A3184FC-5AE1-4221-8618-2991553AB3D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A3184FC-5AE1-4221-8618-2991553AB3D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A3184FC-5AE1-4221-8618-2991553AB3D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D27EC20-7C5F-4371-9E33-8D1FCD29D014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D27EC20-7C5F-4371-9E33-8D1FCD29D014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D27EC20-7C5F-4371-9E33-8D1FCD29D014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D27EC20-7C5F-4371-9E33-8D1FCD29D014}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
